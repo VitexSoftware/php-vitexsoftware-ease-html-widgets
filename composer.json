@@ -1,0 +1,32 @@
+{
+    "name": "vitexsoftware/ease-html-widgets",
+    "description": "Additional & Eye Candy Web classes for Ease Framework",
+    "authors": [
+        {
+            "name": "Vítězslav Dvořák",
+            "email": "info@vitexsoftware.cz",
+            "homepage": "http://vitexsoftware.cz/"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Ease\\Html\\Widgets\\": "src/Ease/Html/Widgets"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Test\\Ease\\": "vendor/vitexsoftware/ease-framework/tests/src/Ease",
+            "Test\\Ease\\Html\\": "vendor/vitexsoftware/ease-framework/tests/src/Ease/Html"
+        }
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "vitexsoftware/ease-html": ">=1.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": ">=8"
+    },
+    "type": "library",
+    "homepage": "http://v.s.cz/ease.php",
+    "license": "MIT"
+}
