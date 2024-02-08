@@ -15,12 +15,18 @@ class Toggle extends \Ease\Html\LabelTag implements \Ease\Html\Input
      */
     protected $checkbox;
 
-
+/**
+ * Toggle
+ *
+ * @param type $name
+ * @param type $value
+ * @param array $properties
+ */
     public function __construct($name, $value = '', $properties = [])
     {
         $properties['id'] = 'toggle' . $name;
         parent::__construct($properties['id'], '', ['class' => 'switch']);
-        $this->checkbox = $this->addItem(new \Ease\Html\CheckboxTag($name, '', $value, $properties));
+        $this->checkbox = $this->addItem(new \Ease\Html\CheckboxTag($name, !empty($value), $value, $properties));
         $this->addItem(new \Ease\Html\SpanTag('', ['class' => 'slider']));
     }
 
