@@ -15,8 +15,8 @@
     },
     "autoload-dev": {
         "psr-4": {
-            "Test\\Ease\\": "vendor/vitexsoftware/ease-framework/tests/src/Ease",
-            "Test\\Ease\\Html\\": "vendor/vitexsoftware/ease-framework/tests/src/Ease/Html"
+            "Test\\Ease\\": "vendor/vitexsoftware/ease-core/tests/src/Ease",
+            "Test\\Ease\\Html\\": "vendor/vitexsoftware/ease-html/tests/src/Ease/Html"
         }
     },
     "minimum-stability": "stable",
@@ -24,9 +24,19 @@
         "vitexsoftware/ease-html": "dev-main"
     },
     "require-dev": {
-        "phpunit/phpunit": ">=8"
+        "phpunit/phpunit": "*",
+        "phpstan/phpstan": "*",
+        "friendsofphp/php-cs-fixer": "^3.61",
+        "ergebnis/composer-normalize": "^2.43",
+        "ergebnis/php-cs-fixer-config": "^6.34"
+    },
+    "config": {
+        "allow-plugins": {
+            "ergebnis/composer-normalize": true
+        }
     },
     "type": "library",
-    "homepage": "http://v.s.cz/ease.php",
-    "license": "MIT"
+    "homepage": "https://github.com/VitexSoftware/php-vitexsoftware-ease-html-widgets",
+    "license": "MIT",
+    "replace": { "vitexsoftware/ease-core-bricks": "*" }
 }
