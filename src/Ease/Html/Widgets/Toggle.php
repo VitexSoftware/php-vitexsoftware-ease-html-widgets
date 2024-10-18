@@ -1,38 +1,48 @@
 <?php
 
+declare(strict_types=1);
+
+/**
+ * This file is part of the EaseHtmlWidgets package
+ *
+ * https://github.com/VitexSoftware/php-vitexsoftware-ease-html-widgets
+ *
+ * (c) Vítězslav Dvořák <http://vitexsoftware.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 namespace Ease\Html\Widgets;
 
 /**
- * Description of Toggle
+ * Description of Toggle.
  *
  * @author vitex
  */
 class Toggle extends \Ease\Html\LabelTag implements \Ease\Html\Input
 {
-    /**
-     *
-     * @var \Ease\Html\CheckBox
-     */
-    protected $checkbox;
+    protected \Ease\Html\CheckBox $checkbox;
 
-/**
- * Toggle
- *
- * @param type $name
- * @param type $value
- * @param array $properties
- */
+    /**
+     * Toggle.
+     *
+     * @param type  $name
+     * @param type  $value
+     * @param array $properties
+     */
     public function __construct($name, $value = '', $properties = [])
     {
-        $properties['id'] = 'toggle' . $name;
+        $properties['id'] = 'toggle'.$name;
         parent::__construct($properties['id'], '', ['class' => 'switch']);
         $this->checkbox = $this->addItem(new \Ease\Html\CheckboxTag($name, !empty($value), $value, $properties));
         $this->addItem(new \Ease\Html\SpanTag('', ['class' => 'slider']));
     }
 
-    public function finalize()
+    public function finalize(): void
     {
-        $this->addCss('
+        $this->addCss(<<<'EOD'
+
 /* The switch - the box around the slider */
 .switch {
   position: relative;
@@ -85,13 +95,13 @@ input:checked + .slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
-}            
-');
+}
+
+EOD);
         parent::finalize();
     }
 
     /**
-     *
      * @return string
      */
     public function getValue()
@@ -100,7 +110,6 @@ input:checked + .slider:before {
     }
 
     /**
-     *
      * @param string $value
      *
      * @return string

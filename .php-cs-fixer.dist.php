@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 /**
- * This file is part of the AbraFlexi-Digest package
+ * This file is part of the EaseHtmlWidgets package
  *
- * https://github.com/VitexSoftware/AbraFlexi-Digest/
+ * https://github.com/VitexSoftware/php-vitexsoftware-ease-html-widgets
  *
  * (c) Vítězslav Dvořák <http://vitexsoftware.com>
  *
@@ -18,9 +18,9 @@ use Ergebnis\PhpCsFixer\Config\Rules;
 use Ergebnis\PhpCsFixer\Config\RuleSet\Php74;
 
 $header = <<<'HEADER'
-This file is part of the AbraFlexi-Digest package
+This file is part of the EaseHtmlWidgets package
 
-https://github.com/VitexSoftware/AbraFlexi-Digest/
+https://github.com/VitexSoftware/php-vitexsoftware-ease-html-widgets
 
 (c) Vítězslav Dvořák <http://vitexsoftware.com>
 
@@ -97,6 +97,7 @@ $config->getFinder()
     ->append([
         __DIR__.'/.php-cs-fixer.dist.php',
     ])
+    ->in('Examples')
     ->in('src')
     ->in('tests');
 

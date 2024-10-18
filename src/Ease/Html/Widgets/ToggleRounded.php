@@ -1,14 +1,22 @@
 <?php
 
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Scripting/PHPClass.php to edit this template
+declare(strict_types=1);
+
+/**
+ * This file is part of the EaseHtmlWidgets package
+ *
+ * https://github.com/VitexSoftware/php-vitexsoftware-ease-html-widgets
+ *
+ * (c) Vítězslav Dvořák <http://vitexsoftware.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace Ease\Html\Widgets;
 
 /**
- * Description of ToggleRounded
+ * Description of ToggleRounded.
  *
  * @author vitex
  */
@@ -20,9 +28,10 @@ class ToggleRounded extends Toggle
         $this->lastItem()->addTagClass('rounded');
     }
 
-    public function finalize()
+    public function finalize(): void
     {
-        $this->addCss('
+        $this->addCss(<<<'EOD'
+
 /* Rounded sliders */
 .slider.round {
   border-radius: 34px;
@@ -30,8 +39,9 @@ class ToggleRounded extends Toggle
 
 .slider.round:before {
   border-radius: 50%;
-}            
-');
+}
+
+EOD);
         parent::finalize();
     }
 }

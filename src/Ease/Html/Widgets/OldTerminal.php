@@ -3,16 +3,20 @@
 declare(strict_types=1);
 
 /**
- * Thanks to https://css-tricks.com/old-timey-terminal-styling/
+ * This file is part of the EaseHtmlWidgets package
  *
- * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright  2023 Vitex Software
+ * https://github.com/VitexSoftware/php-vitexsoftware-ease-html-widgets
+ *
+ * (c) Vítězslav Dvořák <http://vitexsoftware.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace Ease\Html\Widgets;
 
 /**
- * Description of OldTerminal
+ * Description of OldTerminal.
  *
  * @author vitex
  */
@@ -21,25 +25,25 @@ class OldTerminal extends \Ease\Html\DivTag
     /**
      * @var int background red color
      */
-    public $red = 0;
+    public int $red = 0;
 
     /**
      * @var int background green color
      */
-    public $green = 150;
+    public int $green = 150;
 
     /**
      * @var int background blue color
      */
-    public $blue = 0;
-
-/**
- * @var string font color
- */
-    public $color = 'white';
+    public int $blue = 0;
 
     /**
-     * Old Style Terminal Div
+     * @var string font color
+     */
+    public string $color = 'white';
+
+    /**
+     * Old Style Terminal Div.
      *
      * @param mixed $content
      * @param array $properties
@@ -47,32 +51,41 @@ class OldTerminal extends \Ease\Html\DivTag
     public function __construct($content = null, $properties = [])
     {
         parent::__construct(null, $properties);
-        $this->addItem(new \Ease\Html\DivTag(new \Ease\Html\PreTag(new \Ease\Html\PairTag('output', [], $content), ['class' => 'console']), ['class' => 'faint','style' => 'z-index: 9']));
+        $this->addItem(new \Ease\Html\DivTag(new \Ease\Html\PreTag(new \Ease\Html\PairTag('output', [], $content), ['class' => 'console']), ['class' => 'faint', 'style' => 'z-index: 9']));
+
         if (empty($this->getTagID())) {
             $this->setTagID();
         }
     }
 
     /**
-     * Prepare CSS
+     * Prepare CSS.
      */
-    public function finalize()
+    public function finalize(): void
     {
-
         $this->addTagClass('OldTerminal');
-        $this->addCSS('
+        $this->addCSS(<<<'EOD'
 
-#' . $this->getTagID() . ' {
+
+#
+EOD.$this->getTagID().<<<'EOD'
+ {
   background-color: black;
-  background-image: radial-gradient(rgba(' . $this->red . ', ' . $this->green . ', ' . $this->blue . ', 0.75), black 120%);
+  background-image: radial-gradient(rgba(
+EOD.$this->red.', '.$this->green.', '.$this->blue.<<<'EOD'
+, 0.75), black 120%);
   margin: 0;
   padding: 0;
   overflow: hidden;
-  color: ' . $this->color . ';
+  color:
+EOD.$this->color.<<<'EOD'
+;
   font: 1.3rem Inconsolata, monospace;
   text-shadow: 0 0 5px #C8C8C8;
 }
-#' . $this->getTagID() . ' .faint {
+#
+EOD.$this->getTagID().<<<'EOD'
+ .faint {
   margin: 0;
   paddig: 0;
   display: block;
@@ -82,20 +95,25 @@ class OldTerminal extends \Ease\Html\DivTag
   pointer-events: none;
 }
 
-#' . $this->getTagID() . '::selection {
+#
+EOD.$this->getTagID().<<<'EOD'
+::selection {
   background: #0080FF;
   text-shadow: none;
 }
 
-#' . $this->getTagID() . ' pre {
+#
+EOD.$this->getTagID().<<<'EOD'
+ pre {
   margin: 0;
 }
-');
+
+EOD);
         parent::finalize();
     }
 
     /**
-     * Set Background Red Color Value
+     * Set Background Red Color Value.
      *
      * @param int $color 0-255
      *
@@ -104,11 +122,12 @@ class OldTerminal extends \Ease\Html\DivTag
     public function setBackRed(int $color)
     {
         $this->red = $color;
+
         return $this;
     }
 
     /**
-     * Set Background Green Color Value
+     * Set Background Green Color Value.
      *
      * @param int $color 0-255
      *
@@ -117,11 +136,12 @@ class OldTerminal extends \Ease\Html\DivTag
     public function setBackGreen(int $color)
     {
         $this->green = $color;
+
         return $this;
     }
 
     /**
-     * Set Background Blue Color Value
+     * Set Background Blue Color Value.
      *
      * @param int $color 0-255
      *
@@ -130,11 +150,12 @@ class OldTerminal extends \Ease\Html\DivTag
     public function setBlue(int $color)
     {
         $this->blue = $color;
+
         return $this;
     }
 
     /**
-     * Set Font Color Value
+     * Set Font Color Value.
      *
      * @param string $color color code or name
      *
@@ -143,6 +164,7 @@ class OldTerminal extends \Ease\Html\DivTag
     public function setFontColor(string $color)
     {
         $this->color = $color;
+
         return $this;
     }
 }
