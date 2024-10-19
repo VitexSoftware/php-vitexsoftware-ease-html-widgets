@@ -1,5 +1,5 @@
 Source: php-vitexsoftware-ease-html-widgets
-Build-Depends: debhelper (>= 7.0.50~), phpdocumentor
+Build-Depends: debhelper (>= 7.0.50~), phpdocumentor,  debhelper-compat (= 12)
 Standards-Version: 4.3.0
 Maintainer: Vítězslav Dvořák <info@vitexsoftware.cz>
 Uploaders: Vitex <vitex@hippy.cz>

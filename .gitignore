@@ -12,3 +12,7 @@ composer.phar
 /debian/php-vitexsoftware-ease-html-widgets.substvars
 /debian/debhelper-build-stamp
 /debian/files
+/debian/php-vitexsoftware-ease-html-widgets-doc/
+/debian/php-vitexsoftware-ease-html-widgets.debhelper.log
+/debian/php-vitexsoftware-ease-html-widgets-doc.substvars
+/debian/php-vitexsoftware-ease-html-widgets-doc.debhelper.log
