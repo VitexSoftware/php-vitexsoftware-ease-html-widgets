@@ -1,0 +1,2 @@
+src/Ease/Html/Widgets/*.php     /usr/share/php/EaseHtmlWidgets/Widgets
+debian/composer.json 		/usr/share/php/EaseHtmlWidgets

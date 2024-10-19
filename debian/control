@@ -1,0 +1,25 @@
+Source: php-vitexsoftware-ease-html-widgets
+Build-Depends: debhelper (>= 7.0.50~), phpdocumentor
+Standards-Version: 4.3.0
+Maintainer: Vítězslav Dvořák <info@vitexsoftware.cz>
+Uploaders: Vitex <vitex@hippy.cz>
+Priority: optional
+Homepage: https://github.com/VitexSoftware/php-vitexsoftware-ease-html-widgets
+
+Package: php-vitexsoftware-ease-html-widgets
+Depends: ${misc:Depends},php-vitexsoftware-ease-html
+Replaces: php-vitexsoftware-ease-bricks
+Architecture: all
+Section: web
+Priority: optional
+Description: Simple PHP framework Bricks
+ Addon components for EasePHP Framework
+
+Package: php-vitexsoftware-ease-html-widgets-doc
+Depends: ${misc:Depends},
+Suggests: www-browser
+Architecture: all
+Section: doc
+Priority: optional
+Description: Ease Html Widgets documentation
+ ApiGen html documentation for ease-framework php library

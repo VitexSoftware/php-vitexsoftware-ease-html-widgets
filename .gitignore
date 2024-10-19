@@ -7,3 +7,8 @@ composer.phar
 /nbproject/private/
 /composer.lock
 /.build/
+/debian/.debhelper/
+/debian/php-vitexsoftware-ease-html-widgets/
+/debian/php-vitexsoftware-ease-html-widgets.substvars
+/debian/debhelper-build-stamp
+/debian/files

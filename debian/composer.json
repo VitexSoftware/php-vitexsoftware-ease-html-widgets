@@ -1,0 +1,33 @@
+{
+  "name": "deb/ease-html-widgets",
+  "description": "Addons for PHP Framework (debianized)",
+  "version": "1.2",
+  "authors": [
+    {
+      "name": "Vítězslav Dvořák",
+      "email": "info@vitexsoftware.cz",
+      "homepage": "http://v.s.cz/"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Ease\\Html\\Widgets\\": "Widgets"
+    }
+  },
+  "require": {
+    "deb/ease-html": "*"
+  },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "/usr/share/php/EaseCore"
+    },
+    {
+      "type": "path",
+      "url": "/usr/share/php/EaseHtml"
+    }
+  ],
+  "type": "library",
+  "homepage": "https://github.com/VitexSoftware/php-vitexsoftware-ease-html-widgets",
+  "license": "MIT"
+}
