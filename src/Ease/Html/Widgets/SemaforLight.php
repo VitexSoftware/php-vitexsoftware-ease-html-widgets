@@ -3,9 +3,9 @@
 declare(strict_types=1);
 
 /**
- * This file is part of the Ease TWBootstrap4 Widgets package
+ * This file is part of the EaseHtmlWidgets package
  *
- * https://github.com/VitexSoftware/php-ease-twbootstrap4-widgets
+ * https://github.com/VitexSoftware/php-vitexsoftware-ease-html-widgets
  *
  * (c) Vítězslav Dvořák <http://vitexsoftware.com>
  *

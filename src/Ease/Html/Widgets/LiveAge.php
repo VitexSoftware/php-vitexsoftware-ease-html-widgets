@@ -15,7 +15,6 @@ declare(strict_types=1);
 
 namespace Ease\Html\Widgets;
 
-use DateTime;
 use Ease\Html\TimeTag;
 
 /**
@@ -28,22 +27,23 @@ class LiveAge extends TimeTag
     /**
      * Show live time to timestamp.
      *
-     * @param DateTime             $dater      When to count from
-     * @param array<string,string> $properties TimeTag properties
+     * @param \DateTime             $dater      When to count from
+     * @param array<string, string> $properties TimeTag properties
      */
     public function __construct($dater, array $properties = [])
     {
-        $days = $dater->diff(new DateTime())->days;
-        $age = ($dater->getTimestamp() - (new DateTime())->getTimestamp());
+        $days = $dater->diff(new \DateTime())->days;
+        $age = ($dater->getTimestamp() - (new \DateTime())->getTimestamp());
 
         $properties['datetime'] = $dater->format('Y-m-d\TH:i:s');
         parent::__construct(
             $days.' '._('days').', '.gmdate('G:i:s', $age),
-            $properties
+            $properties,
         );
         $this->setTagID();
 
-        $this->addJavaScript('
+        $this->addJavaScript(<<<'EOD'
+
 function component(x, v) {
     return Math.floor(x / v);
 }
@@ -63,11 +63,16 @@ function updateCountdown(tagID, targetTimestamp) {
     document.getElementById(tagID).innerHTML = sign + " " + days + "d " + hours + "h " + minutes + "m " + seconds + "s";
 }
 
-var targetTimestamp' . $this->getTagID().' = '.$dater->getTimestamp(). ';
+var targetTimestamp
+EOD.$this->getTagID().' = '.$dater->getTimestamp().<<<'EOD'
+;
 
 setInterval(function() {
-    updateCountdown("' . $this->getTagID(). '", targetTimestamp' . $this->getTagID().');
+    updateCountdown("
+EOD.$this->getTagID().'", targetTimestamp'.$this->getTagID().<<<'EOD'
+);
 }, 1000);
-');
+
+EOD);
     }
 }

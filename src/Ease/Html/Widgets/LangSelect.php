@@ -25,8 +25,8 @@ class LangSelect extends \Ease\Html\SelectTag
     /**
      * Language Selector.
      *
-     * @param string               $name       Input Name
-     * @param array<string,string> $properties Additional properties
+     * @param string                $name       Input Name
+     * @param array<string, string> $properties Additional properties
      */
     public function __construct(string $name = 'lang', array $properties = [])
     {

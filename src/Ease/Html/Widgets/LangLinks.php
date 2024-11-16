@@ -24,7 +24,8 @@ class LangLinks extends \Ease\Html\UlTag
 {
     /**
      * Language Selector.
-     * @param array<string,string> $properties
+     *
+     * @param array<string, string> $properties
      */
     public function __construct(array $properties = [])
     {

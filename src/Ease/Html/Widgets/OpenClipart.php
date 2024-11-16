@@ -25,9 +25,9 @@ class OpenClipart extends \Ease\Html\ATag
     /**
      * OpenClipart Image.
      *
-     * @param string               $directory  Directory with images
-     * @param string               $alt        Image Alt
-     * @param array<string,string> $properties Additional properties
+     * @param string                $directory  Directory with images
+     * @param string                $alt        Image Alt
+     * @param array<string, string> $properties Additional properties
      */
     public function __construct($directory, $alt, $properties = [])
     {

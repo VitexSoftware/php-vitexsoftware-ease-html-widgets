@@ -1,6 +1,11 @@
-php-vitexsoftware-ease-html-widgets (1.1.0) UNRELEASED; urgency=medium
+php-vitexsoftware-ease-html-widgets (1.1.0) unstable; urgency=medium
 
-  * Semafor Light added
+  * Jenkins now stores artifacts
+  * Semantic versioning used
+  * phpstan used
+  * Added Semafor Light widget
+  * Updated LiveAge widget to show live countdown with "+" and "-" signs
+  * Various code improvements and refactoring
 
  -- vitex <info@vitexsoftware.cz>  Sat, 16 Nov 2024 12:59:37 +0100
 

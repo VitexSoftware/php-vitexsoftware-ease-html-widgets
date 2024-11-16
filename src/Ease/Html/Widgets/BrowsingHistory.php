@@ -18,16 +18,16 @@ namespace Ease\Html\Widgets;
 /**
  * Show history of visited pages in app.
  *
- * @param mixed $content
  * @param array $properties
+ * @param mixed $content
  */
 class BrowsingHistory extends \Ease\Html\DivTag
 {
     /**
      * Show history of visited pages in app.
      *
-     * @param array<string>        $histrory   Array of visited pages
-     * @param array<string,string> $properties Additional properties
+     * @param array<string>         $histrory   Array of visited pages
+     * @param array<string, string> $properties Additional properties
      */
     public function __construct(array $histrory = [], array $properties = [])
     {

@@ -27,11 +27,11 @@ class Toggle extends \Ease\Html\LabelTag implements \Ease\Html\Input
     /**
      * Toggle Switch.
      *
-     * @param string               $name       Input Name
-     * @param string               $value      Input Value
-     * @param array<string,string> $properties Additional properties
+     * @param string                $name       Input Name
+     * @param string                $value      Input Value
+     * @param array<string, string> $properties Additional properties
      */
-    public function __construct(string $name,string $value = '', $properties = [])
+    public function __construct(string $name, string $value = '', $properties = [])
     {
         $properties['id'] = 'toggle'.$name;
         parent::__construct($properties['id'], '', ['class' => 'switch']);
@@ -101,9 +101,6 @@ EOD);
         parent::finalize();
     }
 
-    /**
-     * @return string
-     */
     public function getValue(): string
     {
         return $this->checkbox->getValue();

@@ -98,12 +98,12 @@ class SandClock extends \Ease\Html\ImgTag
 </svg>
 EOD;
 
-/**
- * SandClock.
- *
- * @param array<string,string> $properties
- */
-public function __construct(array $properties = [])
+    /**
+     * SandClock.
+     *
+     * @param array<string, string> $properties
+     */
+    public function __construct(array $properties = [])
     {
         parent::__construct(self::base64src(self::$sandClockSVG, 'image/svg+xml'), _('Please wait'), $properties);
         \Ease\WebPage::singleton()->addCss(<<<'EOD'
