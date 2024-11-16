@@ -1,6 +1,13 @@
-php-vitexsoftware-ease-html-widgets (0.1.0) UNRELEASED; urgency=low
+php-vitexsoftware-ease-html-widgets (1.1.0) UNRELEASED; urgency=medium
 
+  * Semantic versioning of depse
+
+ --  <vitezslav.dvorak@spojenet.cz>  Fri, 15 Nov 2024 19:40:43 +0100
+
+php-vitexsoftware-ease-html-widgets (0.1.0) unstable; urgency=low
+
+  [ Vítězslav Dvořák ]
   * Initial release. Closes: #nnnn
     <nnnn is the bug number of your ITP>
 
- -- Vítězslav Dvořák <info@vitexsoftware.cz>  Sat, 19 Oct 2024 11:12:51 +0200
+ --  <vitezslav.dvorak@spojenet.cz>  Fri, 15 Nov 2024 19:40:37 +0100
