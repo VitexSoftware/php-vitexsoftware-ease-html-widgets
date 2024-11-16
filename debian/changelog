@@ -1,8 +1,15 @@
 php-vitexsoftware-ease-html-widgets (1.1.0) UNRELEASED; urgency=medium
 
+  * Semafor Light added
+
+ -- vitex <info@vitexsoftware.cz>  Sat, 16 Nov 2024 12:59:37 +0100
+
+php-vitexsoftware-ease-html-widgets (1.1.0) unstable; urgency=medium
+
+  [ vitezslav.dvorak@spojenet.cz ]
   * Semantic versioning of depse
 
- --  <vitezslav.dvorak@spojenet.cz>  Fri, 15 Nov 2024 19:40:43 +0100
+ -- vitex <info@vitexsoftware.cz>  Sat, 16 Nov 2024 12:59:03 +0100
 
 php-vitexsoftware-ease-html-widgets (0.1.0) unstable; urgency=low
 

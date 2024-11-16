@@ -22,7 +22,13 @@ namespace Ease\Html\Widgets;
  */
 class LangSelect extends \Ease\Html\SelectTag
 {
-    public function __construct($name = 'lang', $properties = [])
+    /**
+     * Language Selector.
+     *
+     * @param string               $name       Input Name
+     * @param array<string,string> $properties Additional properties
+     */
+    public function __construct(string $name = 'lang', array $properties = [])
     {
         parent::__construct($name, $properties);
         $locale = \Ease\Locale::singleton();
@@ -31,12 +37,12 @@ class LangSelect extends \Ease\Html\SelectTag
             $name = substr($name, 0, strpos($name, ' ('));
 
             if (\Ease\Locale::$localeUsed === $code) {
-                $this->addItemSmart(new \Ease\Html\StrongTag(new \Ease\Html\ATag(
+                $this->addItem(new \Ease\Html\StrongTag(new \Ease\Html\ATag(
                     '?locale='.$code,
                     $name,
                 )));
             } else {
-                $this->addItemSmart(new \Ease\Html\ATag('?locale='.$code, $name));
+                $this->addItem(new \Ease\Html\ATag('?locale='.$code, $name));
             }
         }
     }

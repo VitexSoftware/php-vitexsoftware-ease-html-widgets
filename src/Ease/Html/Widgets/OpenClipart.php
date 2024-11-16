@@ -22,6 +22,13 @@ namespace Ease\Html\Widgets;
  */
 class OpenClipart extends \Ease\Html\ATag
 {
+    /**
+     * OpenClipart Image.
+     *
+     * @param string               $directory  Directory with images
+     * @param string               $alt        Image Alt
+     * @param array<string,string> $properties Additional properties
+     */
     public function __construct($directory, $alt, $properties = [])
     {
         $randomImage = self::randomImage($directory);
@@ -33,7 +40,12 @@ class OpenClipart extends \Ease\Html\ATag
         parent::__construct('https://openclipart.org/detail/'.str_replace('.svg', '', $randomImage), new \Ease\Html\ImgTag($directory.'/'.$randomImage, $alt, $properties));
     }
 
-    public static function randomImage($dir)
+    /**
+     * Get Random Image from Directory.
+     *
+     * @param string $dir Directory with images
+     */
+    public static function randomImage(string $dir): string
     {
         $files = scandir($dir);
 

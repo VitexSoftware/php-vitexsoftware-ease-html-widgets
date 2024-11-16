@@ -22,7 +22,11 @@ namespace Ease\Html\Widgets;
  */
 class LangLinks extends \Ease\Html\UlTag
 {
-    public function __construct($properties = [])
+    /**
+     * Language Selector.
+     * @param array<string,string> $properties
+     */
+    public function __construct(array $properties = [])
     {
         parent::__construct(null, $properties);
         $locale = \Ease\Locale::singleton();

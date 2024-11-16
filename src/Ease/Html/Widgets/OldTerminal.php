@@ -46,7 +46,7 @@ class OldTerminal extends \Ease\Html\DivTag
      * Old Style Terminal Div.
      *
      * @param mixed $content
-     * @param array $properties
+     * @param array<string,string> $properties
      */
     public function __construct($content = null, $properties = [])
     {

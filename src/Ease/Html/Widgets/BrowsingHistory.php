@@ -26,12 +26,12 @@ class BrowsingHistory extends \Ease\Html\DivTag
     /**
      * Show history of visited pages in app.
      *
-     * @param mixed $content
-     * @param array $properties
+     * @param array<string>        $histrory   Array of visited pages
+     * @param array<string,string> $properties Additional properties
      */
-    public function __construct($content = null, $properties = null)
+    public function __construct(array $histrory = [], array $properties = [])
     {
-        $webPage = \Ease\Shared::webPage();
+        $webPage = \Ease\WebPage::singleton();
 
         if (null === $properties) {
             $properties = [];

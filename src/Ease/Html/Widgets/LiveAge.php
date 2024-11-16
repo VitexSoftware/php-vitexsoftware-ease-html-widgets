@@ -15,71 +15,59 @@ declare(strict_types=1);
 
 namespace Ease\Html\Widgets;
 
+use DateTime;
+use Ease\Html\TimeTag;
+
 /**
  * LiveAge.
  *
  * @author Vítězslav Dvořák <info@vitexsoftware.cz>
  */
-class LiveAge extends \Ease\Html\TimeTag
+class LiveAge extends TimeTag
 {
     /**
      * Show live time to timestamp.
      *
-     * @param long  $timestamp  UnixTime
-     * @param array $properties TimeTag properties
+     * @param DateTime             $dater      When to count from
+     * @param array<string,string> $properties TimeTag properties
      */
-    public function __construct($timestamp, $properties = [])
+    public function __construct($dater, array $properties = [])
     {
-        $age = time() - $timestamp;
-        $days = floor($age / 86400);
-        $dater = new \DateTime();
-        $dater->setTimestamp($timestamp);
+        $days = $dater->diff(new DateTime())->days;
+        $age = ($dater->getTimestamp() - (new DateTime())->getTimestamp());
+
         $properties['datetime'] = $dater->format('Y-m-d\TH:i:s');
         parent::__construct(
             $days.' '._('days').', '.gmdate('G:i:s', $age),
-            $properties,
+            $properties
         );
         $this->setTagID();
 
-        $this->addJavaScript(<<<'EOD'
-
-var timestamp
-EOD.$this->getTagID().' = '.$age.<<<'EOD'
-;
-
+        $this->addJavaScript('
 function component(x, v) {
     return Math.floor(x / v);
 }
 
-var $div
-EOD.$this->getTagID().' = $(\'#'.$this->getTagID().<<<'EOD'
-');
+function updateCountdown(tagID, targetTimestamp) {
+    var now = new Date().getTime() / 1000;
+    var timeDifference = targetTimestamp - now;
+    var isFuture = timeDifference > 0;
+    var sign = isFuture ? "+" : "-";
+    var absDifference = Math.abs(timeDifference);
+
+    var days = component(absDifference, 24 * 60 * 60);
+    var hours = component(absDifference, 60 * 60) % 24;
+    var minutes = component(absDifference, 60) % 60;
+    var seconds = Math.floor(absDifference % 60);
+
+    document.getElementById(tagID).innerHTML = sign + " " + days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+}
+
+var targetTimestamp' . $this->getTagID().' = '.$dater->getTimestamp(). ';
 
 setInterval(function() {
-
-    timestamp
-EOD.$this->getTagID().<<<'EOD'
-++;
-
-    var days
-EOD.$this->getTagID().'    = component(timestamp'.$this->getTagID().<<<'EOD'
-, 24 * 60 * 60),
-        hours
-EOD.$this->getTagID().'   = component(timestamp'.$this->getTagID().<<<'EOD'
-,      60 * 60) % 24,
-        minutes
-EOD.$this->getTagID().' = component(timestamp'.$this->getTagID().<<<'EOD'
-,           60) % 60,
-        seconds
-EOD.$this->getTagID().' = component(timestamp'.$this->getTagID().<<<'EOD'
-,            1) % 60;
-
-    $div
-EOD.$this->getTagID().'.html(days'.$this->getTagID().' + " '._('days').', " + hours'.$this->getTagID().' + ":" + minutes'.$this->getTagID().' + ":" + seconds'.$this->getTagID().<<<'EOD'
-);
-
+    updateCountdown("' . $this->getTagID(). '", targetTimestamp' . $this->getTagID().');
 }, 1000);
-
-EOD);
+');
     }
 }

@@ -22,16 +22,16 @@ namespace Ease\Html\Widgets;
  */
 class Toggle extends \Ease\Html\LabelTag implements \Ease\Html\Input
 {
-    protected \Ease\Html\CheckBox $checkbox;
+    protected \Ease\Html\CheckboxTag $checkbox;
 
     /**
-     * Toggle.
+     * Toggle Switch.
      *
-     * @param type  $name
-     * @param type  $value
-     * @param array $properties
+     * @param string               $name       Input Name
+     * @param string               $value      Input Value
+     * @param array<string,string> $properties Additional properties
      */
-    public function __construct($name, $value = '', $properties = [])
+    public function __construct(string $name,string $value = '', $properties = [])
     {
         $properties['id'] = 'toggle'.$name;
         parent::__construct($properties['id'], '', ['class' => 'switch']);
@@ -104,7 +104,7 @@ EOD);
     /**
      * @return string
      */
-    public function getValue()
+    public function getValue(): string
     {
         return $this->checkbox->getValue();
     }
