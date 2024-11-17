@@ -1,3 +1,11 @@
+php-vitexsoftware-ease-html-widgets (1.1.1) UNRELEASED; urgency=medium
+
+  * readme.md updated
+  * Added images
+
+
+ -- vitex <info@vitexsoftware.cz>  Sun, 17 Nov 2024 08:33:55 +0100
+
 php-vitexsoftware-ease-html-widgets (1.1.0) unstable; urgency=medium
 
   * Jenkins now stores artifacts
@@ -7,7 +15,7 @@ php-vitexsoftware-ease-html-widgets (1.1.0) unstable; urgency=medium
   * Updated LiveAge widget to show live countdown with "+" and "-" signs
   * Various code improvements and refactoring
 
- -- vitex <info@vitexsoftware.cz>  Sat, 16 Nov 2024 12:59:37 +0100
+ -- vitex <info@vitexsoftware.cz>  Sun, 17 Nov 2024 08:33:35 +0100
 
 php-vitexsoftware-ease-html-widgets (1.1.0) unstable; urgency=medium
 

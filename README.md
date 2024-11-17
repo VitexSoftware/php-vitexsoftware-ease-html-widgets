@@ -26,6 +26,8 @@ composer require vitexsoftware/ease-html-widgets
 
 Here is a basic example of how to use one of the widgets:
 
+### SandClock
+
 ```php
 require '../vendor/autoload.php';
 
@@ -39,6 +41,74 @@ It gives you nice SandClock
 
 ![SandClock Widget](sandclock.svg?raw=true)
 
+### OldTerminal
+
+![Old Terminal](oldterminal.png?raw=true)
+
+### Locale Select
+
+Simple chooser of availble locales
+
+```php
+new \Ease\ui\LangSelect()
+```
+
+![LocaleSelect](LocaleSelect.png?raw=true "Locale select Widget")
+
+### Live Age
+
+Show live age based on unix timestamp
+
+```php
+new \Ease\ui\LiveAge(new DateTime);
+```
+
+![LiveAge](LiveAge.png?raw=true "Live Age Widget")
+
+### Browsing History
+
+```php
+new BrowsingHistory();
+```
+
+![Browsing History](BrowsingHistory.png?raw=true "Browsing History")
+
+### Sticky note
+
+```php
+new StickyNote();
+```
+
+![Sticky Note](StickyNote.png?raw=true "Sticky Note")
+
+### Selectizer trait
+
+Apply Selectize.js to InputBox or Select
+
+```php
+class Selector extends \Ease\Html\SelectTag
+{
+    use \Ease\Html\Widgets\Selectizer;
+}
+
+$properties = [
+    'valueField' => 'value',
+    'labelField' => 'key',
+    'searchField' => ['key', 'value']
+];
+
+$options = [
+    ['key' => 'red', 'value' => 'Red'],
+    ['key' => 'blue', 'value' => 'Blue'],
+    ['key' => 'green', 'value' => 'Green'],
+    ['key' => 'yellow', 'value' => 'Yellow'],
+];
+
+$s = new Selector('selector');
+$s->selectize($properties, $options);
+```
+
+![Selectizer](https://raw.githubusercontent.com/VitexSoftware/Ease-PHP-Bricks/master/Selectizer.png "Selectizer")
 
 ## Contributing
 
@@ -47,3 +117,27 @@ We welcome contributions! Please read our [contributing guidelines](CONTRIBUTING
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+### Debian Packages
+
+To install using Debian packages from `repo.vitexsoftware.com`, follow these steps:
+
+1. Add the repository to your sources list:
+
+```bash
+wget -qO- https://repo.vitexsoftware.com/keyring.gpg | sudo tee /etc/apt/trusted.gpg.d/vitexsoftware.gpg
+echo "deb [signed-by=/etc/apt/trusted.gpg.d/vitexsoftware.gpg]  https://repo.vitexsoftware.com  $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/vitexsoftware.list
+sudo apt update
+```
+
+2. Update the package list:
+
+```bash
+sudo apt-get update
+```
+
+3. Install the package:
+
+```bash
+sudo apt-get install php-vitexsoftware-ease-html-widgets
+```
