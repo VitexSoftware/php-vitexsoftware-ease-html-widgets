@@ -27,10 +27,10 @@ class LiveAge extends TimeTag
     /**
      * Show live time to timestamp.
      *
-     * @param \DateTime             $dater      When to count from
+     * @param \DateTimeInterface    $dater      When to count from
      * @param array<string, string> $properties TimeTag properties
      */
-    public function __construct($dater, array $properties = [])
+    public function __construct(\DateTimeInterface $dater, array $properties = [])
     {
         $days = $dater->diff(new \DateTime())->days;
         $age = ($dater->getTimestamp() - (new \DateTime())->getTimestamp());
