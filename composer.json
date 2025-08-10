@@ -21,7 +21,7 @@
     },
     "minimum-stability": "stable",
     "require": {
-        "vitexsoftware/ease-html": "^1.32"
+        "vitexsoftware/ease-html": "^1.40"
     },
     "require-dev": {
         "phpunit/phpunit": "*",
