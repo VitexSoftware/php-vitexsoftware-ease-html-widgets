@@ -12,6 +12,6 @@
 #	dh_auto_install -- prefix=/usr
 
 override_dh_install:
-	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//'`'"'  debian/composer.json |sponge debian/composer.json
+	mkdir -p debian/tmp
+	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//'`'"'  debian/composer.json |sponge debian/tmp/composer.json
 	dh_install
-

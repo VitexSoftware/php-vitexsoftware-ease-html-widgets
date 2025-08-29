@@ -16,3 +16,4 @@ composer.phar
 /debian/php-vitexsoftware-ease-html-widgets.debhelper.log
 /debian/php-vitexsoftware-ease-html-widgets-doc.substvars
 /debian/php-vitexsoftware-ease-html-widgets-doc.debhelper.log
+/debian/tmp/

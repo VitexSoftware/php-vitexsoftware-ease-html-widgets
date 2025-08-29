@@ -1,7 +1,6 @@
 {
   "name": "deb/ease-html-widgets",
   "description": "Addons for PHP Framework (debianized)",
-  "version": "1.1.0",
   "authors": [
     {
       "name": "Vítězslav Dvořák",
