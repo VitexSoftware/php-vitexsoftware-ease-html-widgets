@@ -1,3 +1,5 @@
 src/Ease/Html/Widgets/*.php     /usr/share/php/EaseHtmlWidgets/Widgets
 debian/tmp/composer.json 	/usr/share/php/EaseHtmlWidgets
 debian/autoload.php		/usr/share/php/EaseHtmlWidgets
+php-vitexsoftware-ease-html-widgets.svg	usr/share/icons/hicolor/scalable/apps/
+io.github.vitexsoftware.php_vitexsoftware_ease_html_widgets.metainfo.xml	usr/share/metainfo/
