@@ -16,7 +16,7 @@ PKG_SOURCE  := $(shell jq -r '.name' composer.json)
 
 override_dh_install:
 	mkdir -p debian/tmp
-	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//'`'"'  debian/composer.json |sponge debian/tmp/composer.json
+	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//'`'"'  composer.json |sponge debian/tmp/composer.json
 	dh_install
 	sed -i "s|: 'unknown'|: '$(PKG_SOURCE)'|" \
 		debian/php-vitexsoftware-ease-html-widgets/usr/share/php/EaseHtmlWidgets/autoload.php
