@@ -45,7 +45,7 @@ class BrowsingHistory extends \Ease\Html\DivTag
 
         parent::__construct(null, $properties);
 
-        $currentUrl = \Ease\Page::phpSelf(false);
+        $currentUrl = \Ease\Document::phpSelf(false);
         $currentTitle = $webPage->pageTitle;
 
         foreach ($_SESSION['history'] as $hid => $page) {
