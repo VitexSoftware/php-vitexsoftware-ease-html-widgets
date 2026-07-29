@@ -1,4 +1,6 @@
 # VitexSoftware Ease HTML Widgets
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+![Packaging: deb](https://img.shields.io/badge/packaging-.deb-red?logo=debian&logoColor=white)
 
 Welcome to the VitexSoftware Ease HTML Widgets project! This repository contains a collection of reusable HTML widgets for PHP applications.
 
