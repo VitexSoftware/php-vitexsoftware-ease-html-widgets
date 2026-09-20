@@ -1,10 +1,10 @@
-php-vitexsoftware-ease-html-widgets (1.1.1) UNRELEASED; urgency=medium
+php-vitexsoftware-ease-html-widgets (1.1.2-1) unstable; urgency=medium
 
-  * readme.md updated
-  * Added images
+  * Fix BrowsingHistory: use Ease\Document::phpSelf() instead of removed
+    Ease\Page (fatal Class not found with ease-html >=1.40).
+  * Debian packaging, AppStream metadata and autoloader updates since 1.1.1.
 
-
- -- vitex <info@vitexsoftware.cz>  Sun, 17 Nov 2024 08:33:55 +0100
+ -- vitex <info@vitexsoftware.cz>  Sun, 20 Sep 2026 19:47:50 +0200
 
 php-vitexsoftware-ease-html-widgets (1.1.0) unstable; urgency=medium
 
